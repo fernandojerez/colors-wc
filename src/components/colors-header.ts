@@ -30,7 +30,7 @@ export class Header extends LitElement {
                 <FontAwesomeIcon icon="{faArrowAltCircleLeft}" size="lg" />
               </div>`
             : ""}
-          <a href="/" class="colors-header__link">
+          <a href="./index.html" class="colors-header__link">
             <div class="colors-header__title">Colors</div>
           </a>
           <div className="colors-header__extra">
