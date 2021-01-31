@@ -1,0 +1,8 @@
+@import 'styles/lib/variables';
+
+.colors-theme-chooser {
+    border-radius: 20px;
+    padding: $button_padding;
+    background-color: $theme_surface;
+    color: $theme_on_background;
+} 

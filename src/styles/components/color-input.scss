@@ -1,0 +1,58 @@
+@import 'styles/lib/variables';
+
+$previewSize: 24px;
+$inputSize: 7em;
+
+.colors-colorinput {
+    display: flex;
+    align-items: center;
+    padding: $padding/2;
+    padding-left: $padding;
+}
+
+.colors-colorinput__input {
+    margin-right: $padding/2;
+    padding: $padding/2;
+    border-radius: $rounded;
+    border: 1px solid lightgray;
+    background-color: $theme_surface;
+    width: $inputSize;
+    @include desktop-only {
+        width: $inputSize*1.5;
+    }
+}
+
+.colors-colorinput__preview {
+    width: $previewSize;
+    height: $previewSize;
+    margin-right: $padding/2;
+    padding: $padding/2;
+    border-radius: $rounded;
+    border: 1px solid lightgray;
+}
+
+.colors-colorinput__input:focus {
+    outline: none;
+    border: 1px solid $theme_primary;
+}
+
+.colors-colorinput__button {    
+    padding: $padding/2;    
+    background-color: $theme_primary;
+    color: $theme_on_primary;    
+    border: none;
+    border-radius: $rounded;
+}
+
+.colors-colorinput__button:focus {
+    outline: none;
+}
+
+.colors-colorinput__button:hover {
+    background-color: $theme_primary_hover;
+}
+
+.colors-colorinput__button:active {
+    background-color: $theme_primary_pressed;
+}
+

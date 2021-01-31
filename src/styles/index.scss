@@ -1,0 +1,27 @@
+@import "lib/variables";
+
+.colors-dark-theme {
+    @include theme_vars("dark");
+}
+
+.colors-light-theme {
+    @include theme_vars("light");
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    color: $theme_on_surface;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.error-msg {
+    background-color: $theme_error;
+    color: $theme_on_error;
+    padding: $padding;
+    border-radius: $rounded;
+}

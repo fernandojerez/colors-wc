@@ -1,0 +1,28 @@
+@import 'styles/lib/variables';
+
+.colors-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $theme_surface;
+    color: $theme_on_surface;
+    width: 100vw;
+    height: 100vh;    
+}
+
+.colors-view__scrollview {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;    
+    padding: $padding;
+    width: 100vw;
+    overflow: auto;
+}
+
+.colors-view__content {    
+    width: 100%;
+    @include desktop-only {
+        width: $workarea;            
+    }
+}

@@ -1,0 +1,15 @@
+@import 'styles/lib/variables';
+
+$tile_size: 150px;
+$tile_compact_size: 90px;
+
+.colors-tileset {
+    display: flex;
+    flex-wrap: wrap;
+    &--large {
+        justify-content: space-around;
+    }
+    &--compact {
+        justify-content: flex-start;
+    }
+}

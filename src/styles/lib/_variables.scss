@@ -1,0 +1,132 @@
+$darkPrimary: #fca311;
+$darkSecondary: #e5e5e5;
+
+$darkTheme: (
+    "primary": $darkPrimary,
+    "primary-hover": lighten($darkPrimary, 10%),
+    "primary-pressed": darken($darkPrimary, 10%),
+
+    "secondary":$darkSecondary,
+    "secondary-hover": lighten($darkSecondary, 10%),
+    "secondary-pressed": darken($darkSecondary, 10%),
+    
+    "on-primary":  #000,
+    "on-secondary": #000,
+
+    "background": #292929,
+    "surface": #121212,
+    "on-background": #BBB,
+    "on-surface": #BBB,
+
+    "error": #b61827,
+    "ok": #087f23,
+    "warning": #fff59d,
+    "info": #bbdefb,
+
+    "on-error": #FFF,
+    "on-ok": #FFF,
+    "on-warning": #000,
+    "on-info": #000,    
+);
+
+$elevations: (
+    "header-elevation": "0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0,0,0,.12)",
+    "card-elevation": "0px 3px 1px -2px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 1px 5px 0px rgba(0,0,0,.12)"
+);
+
+$darkTheme: map-merge($darkTheme, $elevations);
+
+$lightPrimary:#E63946;
+$lightSecondary:#F1FAEE;
+
+$lightTheme: (
+    "primary": $lightPrimary,
+    "primary-hover": lighten($lightPrimary, 10%),
+    "primary-pressed": darken($lightPrimary, 10%),
+
+    "secondary":$lightSecondary,
+    "secondary-hover": lighten($lightSecondary, 10%),
+    "secondary-pressed": darken($lightSecondary, 10%),
+
+    "background": #FFF,
+    "surface": #F5F5F5,
+    "on-background": #000,
+    "on-surface": #000,
+
+    "error": #b61827,
+    "ok": #087f23,
+    "warning": #fff59d,
+    "info": #bbdefb,
+
+    "on-error": #FFF,
+    "on-ok": #FFF,
+    "on-warning": #000,
+    "on-info": #000,
+);
+
+$lightTheme: map-merge($lightTheme, $elevations);
+
+@function theme_data($name, $value){
+    @if $name == "dark" {
+        @return map-get($darkTheme, $value);
+    }
+    @return map-get($lightTheme, $value);
+}
+
+@mixin desktop-only {
+	@media (min-width : 1024px) {
+		@content;
+	}
+}
+
+@mixin theme_vars($theme:'dark'){
+    --theme-primary: #{theme_data($theme, 'primary')}; 
+    --theme-primary-hover: #{theme_data($theme, 'primary-hover')}; 
+    --theme-primary-pressed: #{theme_data($theme, 'primary-pressed')};
+    --theme-secondary: #{theme_data($theme, 'secondary')}; 
+    --theme-secondary-hover: #{theme_data($theme, 'secondary-hover')}; 
+    --theme-secondary-pressed: #{theme_data($theme, 'secondary-pressed')}; 
+    --theme-on-primary: #{theme_data($theme, 'on-primary')}; 
+    --theme-on-secondary: #{theme_data($theme, 'on-secondary')}; 
+
+    --theme-background: #{theme_data($theme, 'background')}; 
+    --theme-surface: #{theme_data($theme, 'surface')}; 
+    --theme-on-background: #{theme_data($theme, 'on-background')}; 
+    --theme-on-surface: #{theme_data($theme, 'on-surface')}; 
+
+    --theme-error: #{theme_data($theme, 'error')}; 
+    --theme-ok: #{theme_data($theme, 'ok')}; 
+    --theme-warning: #{theme_data($theme, 'warning')}; 
+    --theme-info: #{theme_data($theme, 'info')}; 
+
+    --theme-on-error: #{theme_data($theme, 'on-error')}; 
+    --theme-on-ok: #{theme_data($theme, 'on-ok')}; 
+    --theme-on-warning: #{theme_data($theme, 'on-warning')}; 
+    --theme-on-info: #{theme_data($theme, 'on-info')}; 
+
+    --theme-header-elevation: #{theme_data($theme, 'header-elevation')}; 
+    --theme-card-elevation: #{theme_data($theme, 'card-elevation')};
+}
+
+$theme_primary: var(--theme-primary);
+$theme_primary_hover: var(--theme-primary-hover);
+$theme_primary_pressed: var(--theme-primary-pressed);
+$theme_on_primary: var(--theme-on-primary);
+
+$theme_background: var(--theme-background);
+$theme_surface: var(--theme-surface);
+$theme_on_background: var(--theme-on-background);
+$theme_on_surface: var(--theme-on-surface);
+
+$theme_error: var(--theme-error);
+$theme_on_error: var(--theme-on-error);
+
+$theme_header_elevation: var(--theme-header-elevation);
+$theme_card_elevation: var(--theme-card-elevation);
+
+$padding: 10px;
+$button_padding: $padding / 2;
+$margin: 10px;
+$rounded: 5px;
+
+$workarea: 1024px;

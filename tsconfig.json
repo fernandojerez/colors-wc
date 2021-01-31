@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "baseUrl": "src",
+        "experimentalDecorators": true,
+        "strict": true,
+        "sourceMap": true,
+        "module": "es6",
+        "target": "es6",
+        "moduleResolution": "node",
+        "jsx": "preserve",
+        "allowJs": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/pages/index.js"
+    ],
+    "exclude": [
+        "/node_modules/"
+    ]
+}
