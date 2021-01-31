@@ -52,7 +52,7 @@ export default class Input extends LitElement {
       "color-value"
     ) as HTMLInputElement;
     if (input) {
-      location.href = "/info.html?color=" + encodeURIComponent(input.value);
+      location.href = "./info.html?color=" + encodeURIComponent(input.value);
     }
   }
 }
